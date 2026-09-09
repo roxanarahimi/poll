@@ -1,0 +1,17 @@
+:root {
+    --bs-primary: maroon;
+}
+
+.btn-primary {
+    --bs-btn-bg: maroon;
+    --bs-btn-border-color: maroon;
+    --bs-btn-hover-bg: rgba(128, 0, 0, 0.86);
+    --bs-btn-hover-border-color: rgba(128, 0, 0, 0.86);
+    --bs-btn-active-color: rgba(128, 0, 0, 0.86);
+
+}
+
+.form-check-input:checked {
+    background-color: maroon;
+    border-color: maroon;
+}
