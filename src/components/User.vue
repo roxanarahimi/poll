@@ -79,9 +79,7 @@ export default {
     const errors = ref([]);
     const step = ref(1);
     const time = ref(59);
-    onMounted(() => {
-      mobile.value = document.querySelector('#mobile').value;
-    })
+
     const getOtp = () => {
       document.querySelector('#mobile').classList.remove('hasError')
       errors.value = []
@@ -99,8 +97,8 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید 11 رقم باشه')
       }
-
       if (mobile.length===11&& mobile.startsWith('09')){
+        mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
           mobile: mobile.value
         }).then((response) => {
