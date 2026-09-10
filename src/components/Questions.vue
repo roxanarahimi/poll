@@ -5,7 +5,7 @@
       <div class="col-lg-7 h-100">
         <div class=" justify-content-center h-100 d-lg-grid p-0 p-lg-0 m-0 d-lg-flex pe-lg-5 mb-lg-5">
      <div class="jumbotron align-self-lg-end rounded p-3 p-lg-5 my-3 mx-auto text-light" ><!--     style="background: rgba(255,255,255,0.85)"-->
-            <h1 class="mb-lg-5">نظرسنجی نودلیت دراگون</h1>
+            <h1 class="mb-lg-5">نظرسنجی نودالیت دراگون</h1>
             <hr>
             <p v-if="errors[questionIndex]" class="alert alert-danger">
               {{ error }}

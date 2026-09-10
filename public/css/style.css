@@ -99,9 +99,35 @@ label,input[type=radio]{
 .btn
 {
     border-radius: 2px;
-    width: 120px;
+    min-width: 120px;
+}
+.text-justify{
+    text-align: justify;
 }
 
+
+
+
+.en{
+    text-align: left;
+    direction: ltr;
+}
+
+.code{
+    text-align: center;
+    direction: ltr;
+    width:60px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+}
+
+input[type=number] {
+    -moz-appearance: textfield !important;
+}
 
 
 input:focus{
@@ -112,4 +138,7 @@ input:focus{
 }
 .alert-success{
     background-color: rgba(209, 231, 221, 0.65);
+}
+.hasError{
+    border:2px solid tomato;
 }
