@@ -74,7 +74,7 @@ import App from "@/App.vue";
 
 export default {
   setup() {
-    const mobile = ref()
+    const mobile = ref('')
     const url = App.setup().url;
     const errors = ref([]);
     const step = ref(1);
@@ -100,7 +100,7 @@ export default {
       if (mobile.length===11&& mobile.startsWith('09')){
         mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
-          mobile: mobile.value
+          mobile: mobile
         }).then((response) => {
           step.value = 2
           counter();
