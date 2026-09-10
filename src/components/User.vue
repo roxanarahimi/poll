@@ -98,7 +98,7 @@ export default {
         errors.value.push('شماره موبایل باید 11 رقم باشه')
       }
       if (mobile.length===11&& mobile.startsWith('09')){
-        mobile.value = document.querySelector('#mobile').value;
+        // mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
           mobile: mobile
         }).then((response) => {
