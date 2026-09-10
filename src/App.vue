@@ -7,7 +7,7 @@ import {ref} from "vue";
 
 export default {
   setup(){
-    const url ='http://localhost:8000/api/'
+    const url ='https://polladmin.amadehlaziz.com/api/'
 
     return{
       url,

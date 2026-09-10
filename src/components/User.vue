@@ -195,7 +195,7 @@ export default {
     }
 
     return {
-      mobile, getOtp, url, errors, step, time, autoTab, resend, counter, editNumber, confirm
+      mobile, getOtp, url, errors, step, time, autoTab, resend, counter, editNumber
     }
   }
 }
