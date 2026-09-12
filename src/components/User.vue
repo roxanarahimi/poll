@@ -74,7 +74,7 @@ import App from "@/App.vue";
 
 export default {
   setup() {
-    const mobile = ref('')
+    const mobile = ref()
     const url = App.setup().url;
     const errors = ref([]);
     const step = ref(1);
@@ -150,6 +150,9 @@ export default {
       // }
 
     }
+  onMounted(()=>{
+    mobile.value = document.getElementById('mobile').value.toString();
+  })
     const autoTab = (e) => {
       errors.value = []
       let code =
