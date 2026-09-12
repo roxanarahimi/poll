@@ -163,7 +163,7 @@ export default {
       if (code.length === 4) {
 
         axios.post(url + 'mobile/verify', {
-          mobile: mobile.value,
+          mobile: document.getElementById('mobile').value,
           scope: 'user',
           code: document.getElementById("code1").value + document.getElementById("code2").value + document.getElementById("code3").value + document.getElementById("code4").value
         })
