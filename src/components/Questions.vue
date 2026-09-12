@@ -87,7 +87,7 @@ export default {
       }
     }
     const getData = () => {
-      axios.get('http://127.0.0.1:8000/api/questions')
+      axios.get(App.setup().url+'questions')
           .then((response) => {
             quiz.value = response.data;
             console.log(quiz.value)
