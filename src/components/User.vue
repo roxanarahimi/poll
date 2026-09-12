@@ -13,7 +13,7 @@
                 <li v-for="error in errors">{{ error }}</li>
               </ul>
             </div>
-            <div v-if="step==1">
+            <div v-show="step==1">
               <p>با شرکت در نظرسنجی مارا در ارائه خدمات بهتر و بهود کیفیت محصولات
                 یاری کنید.
               </p>
@@ -74,7 +74,6 @@ import App from "@/App.vue";
 
 export default {
   setup() {
-    const mobile = ref()
     const url = App.setup().url;
     const errors = ref([]);
     const step = ref(1);
@@ -196,7 +195,7 @@ export default {
     }
 
     return {
-      mobile, getOtp, url, errors, step, time, autoTab, resend, counter, editNumber
+      getOtp, url, errors, step, time, autoTab, resend, counter, editNumber
     }
   }
 }
