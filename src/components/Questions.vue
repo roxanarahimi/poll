@@ -3,9 +3,9 @@
     <div class="row h-100 d-flex align-self-lg-end">
       <div class="col-lg-5 "></div>
       <div class="col-lg-7 h-100">
-        <div class=" justify-content-center h-100 d-lg-grid p-0 p-lg-0 m-0 d-lg-flex pe-lg-5 mb-lg-5">
+        <div class=" justify-content-center h-100 d-lg-grid p-0 p-lg-0 m-0 d-lg-flex pe-lg-5 ">
      <div class="jumbotron align-self-lg-end rounded p-3 p-lg-5 my-3 mx-auto text-light" ><!--     style="background: rgba(255,255,255,0.85)"-->
-            <h1 class="mb-lg-5">نظرسنجی نودالیت دراگون</h1>
+            <h1 class="">نظرسنجی نودالیت دراگون</h1>
             <hr>
             <p v-if="errors[questionIndex]" class="alert alert-danger">
               {{ error }}
@@ -13,7 +13,7 @@
             <div class="" v-for="(question, index) in quiz">
               <div v-show="index === questionIndex">
 
-                <h4 class="mt-lg-5 mb-lg-3">{{ question.question }}</h4>
+                <h4 class=" mb-lg-3">{{ question.question }}</h4>
 
                 <div class="">
                   <div class="mx-auto text-start mt-3">
@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div v-if="quiz.length > 0" v-show="questionIndex === quiz?.length">
+            <div class="mb-5" v-if="quiz.length > 0" v-show="questionIndex === quiz?.length">
               <p v-if="messageOk === true" class="alert alert-success">
                 {{ message }}
               </p>
