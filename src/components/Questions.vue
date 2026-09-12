@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div v-if="quiz.length" v-show="questionIndex === quiz?.length">
+            <div v-if="quiz.length > 0" v-show="questionIndex === quiz?.length">
               <p v-if="messageOk === true" class="alert alert-success">
                 {{ message }}
               </p>
