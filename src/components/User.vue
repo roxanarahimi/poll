@@ -163,7 +163,7 @@ export default {
         axios.post(url + 'mobile/verify', {
           mobile: mobile.value,
           scope: 'user',
-          password: document.getElementById("code1").value + document.getElementById("code2").value + document.getElementById("code3").value + document.getElementById("code4").value
+          code: document.getElementById("code1").value + document.getElementById("code2").value + document.getElementById("code3").value + document.getElementById("code4").value
         })
             .then((res) => {
               if (res.status === 200) {
