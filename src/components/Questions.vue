@@ -44,7 +44,7 @@
               </div>
             </div>
 
-            <div v-show="questionIndex === quiz?.length">
+            <div v-if="quiz.length" v-show="questionIndex === quiz?.length">
               <p v-if="messageOk === true" class="alert alert-success">
                 {{ message }}
               </p>
@@ -118,7 +118,7 @@ export default {
 
     }
 
-    onBeforeMount(() => {
+    onMounted(() => {
       getData();
     })
     return {
