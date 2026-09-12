@@ -149,9 +149,6 @@ export default {
       // }
 
     }
-  onMounted(()=>{
-    mobile.value = document.getElementById('mobile').value.toString();
-  })
     const autoTab = (e) => {
       errors.value = []
       let code =
