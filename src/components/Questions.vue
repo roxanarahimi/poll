@@ -63,6 +63,7 @@
 </template>
 <script>
 import {onBeforeMount, onMounted, ref} from "vue";
+import App from "@/App.vue";
 
 export default {
   setup() {
@@ -99,7 +100,7 @@ export default {
     const message = ref('');
     const save = () => {
       console.log(responses.value)
-      axios.post('http://127.0.0.1:8000/api/saveAnswer',
+      axios.post(App.setup().url+'saveAnswer',
           {
             answers: responses.value,
             user_id: 1
@@ -120,10 +121,6 @@ export default {
     onBeforeMount(() => {
       getData();
     })
-    //
-    // onMounted(() => {
-    //   alert(window.innerWidth+'*'+window.innerHeight);
-    // })
     return {
       quiz, questionIndex, responses, errors, error,
       prev, next, save, getData
