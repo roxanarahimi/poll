@@ -159,20 +159,20 @@ export default {
           document.getElementById("code2").value +
           document.getElementById("code3").value +
           document.getElementById("code4").value;
+      let mobile = document.getElementById('mobile').value;
 
       if (code.length === 4) {
 
         axios.post(url + 'mobile/verify', {
-          mobile: document.getElementById('mobile').value,
-          scope: 'user',
-          code: document.getElementById("code1").value + document.getElementById("code2").value + document.getElementById("code3").value + document.getElementById("code4").value
+          mobile: mobile,
+          code: code,
         })
             .then((res) => {
               if (res.status === 200) {
                 localStorage.setItem('user', JSON.stringify(res.data.user))
                 // localStorage.setItem('token', JSON.stringify(res.data.access_token))
                 // localStorage.setItem('expire', JSON.stringify(res.data.expire));
-                localStorage.setItem('user', JSON.stringify({mobile:mobile.value,id:1,polls:[]}))
+                localStorage.setItem('user', JSON.stringify({mobile:mobile,id:1,polls:[]}))
                 let user = JSON.parse(localStorage.getItem('user'));
                 if (user.polls.length){
                   step.value = 3;
