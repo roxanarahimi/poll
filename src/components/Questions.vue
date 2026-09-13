@@ -103,7 +103,7 @@ export default {
       axios.post(App.setup().url+'saveAnswer',
           {
             answers: responses.value,
-            user_id: 1
+            user_id: JSON.parse(localStorage.getItem('user')).id
 
           }).then((response) => {
         messageOk.value = true;

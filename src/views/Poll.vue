@@ -20,6 +20,7 @@ export default {
     const user = ref({})
     onMounted(() => {
       let user_ = JSON.parse(localStorage.getItem('user'));
+      console.log('user_',user_)
       if (user_) {
         axios.get(App.setup().url + 'user/' + user_.id)
             .then((res) => {
@@ -40,6 +41,8 @@ export default {
       }
 
     })
+
+    return{user,}
   }
 }
 </script>
