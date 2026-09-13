@@ -27,7 +27,7 @@ export default {
               localStorage.setItem('user', JSON.stringify(res.data));
             })
             .then(()=>{
-              if (user.value) {
+              if (!user.value) {
                 window.location = '/'
               }else if(user.value.voted == true) {
                 window.location = '/'
