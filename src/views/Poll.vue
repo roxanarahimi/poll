@@ -17,7 +17,15 @@ export default {
   setup(){
     const user = ref({})
     onMounted(()=>{
-      user.value =JSON.parse(localStorage.getItem('user'));
+      let user_ =JSON.parse(localStorage.getItem('user'));
+      if(user_){
+        axios.get(App.setup().url+'user/'+user_.id)
+            .then((res)=>{
+              user.value = res.data
+            })
+            .catch((error)=>console.error(error))
+
+      }
       console.log(user.value)
       if(user.value == {}){
         window.location = '/'
