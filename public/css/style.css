@@ -62,7 +62,7 @@ body {
 .jumbotron h1{
     font-size: 50px !important;
 }
-.jumbotron h4{
+.jumbotron h4,h4{
     font-size: 18px !important;
 }
 .jumbotron label{
