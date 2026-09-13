@@ -8,7 +8,7 @@
       <br>
 
     </div>
-    <div class="jumbotron bg-dark text-light mb-5  rounded p-4 p-lg-4 mx-auto " >
+    <div class="jumbotron bg-dark text-light  rounded p-4 p-lg-4 mx-auto " >
 
       <div v-if="errors.length" class="alert alert-danger d-flex justify-content-center">
         <ul>
@@ -29,7 +29,7 @@
         </div>
       </div>
       <div v-if="step==2" class="col-lg-8 mx-auto">
-        <p>لطفا کد تاییدی که در پیامک دریافت کردی رو وارد کن</p>
+        <p>کد تاییدی که در پیامک دریافت کردی رو وارد کن</p>
         <div class="d-flex justify-content-between flex-row-reverse w-100">
           <div class="mb-3">
             <input type="number" @input="autoTab($event)" id="code1" class="form-control code bg-none "
