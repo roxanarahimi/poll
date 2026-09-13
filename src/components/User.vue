@@ -59,6 +59,14 @@
                 <small v-else class="text-secondary">ارسال دوباره کد</small>
               </div>
             </div>
+            <div v-if="step==3" >
+              <div class="alert alert-warning d-flex justify-content-center">
+                <ul>
+                  <li>شما قبلا در نظرسنجی شرکت کرده اید. با تشکر از همراهی شما.</li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -96,7 +104,7 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید 11 رقم باشه')
       }
-      if (mobile.length===11&& mobile.startsWith('09')){
+      if (mobile.length === 11 && mobile.startsWith('09')) {
         // mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
           mobile: mobile
@@ -107,7 +115,6 @@ export default {
           errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
         })
       }
-
 
 
     }
@@ -134,7 +141,7 @@ export default {
         time.value = distance;
         var t = time.value < 10 ? "0" : "";
         let element = document.getElementById("time");
-        if(element) element.innerHTML = t + time.value;
+        if (element) element.innerHTML = t + time.value;
 
         if (distance < 1) {
           clearInterval(x);
@@ -149,6 +156,9 @@ export default {
       // }
 
     }
+    onMounted(()=>{
+      localStorage.removeItem('user');
+    })
     const autoTab = (e) => {
       errors.value = []
       let code =
@@ -166,15 +176,11 @@ export default {
         })
             .then((res) => {
               if (res.status === 200) {
-                localStorage.setItem('user', JSON.stringify(res.data.user))
-                // localStorage.setItem('token', JSON.stringify(res.data.access_token))
-                // localStorage.setItem('expire', JSON.stringify(res.data.expire));
-                localStorage.setItem('user', JSON.stringify({mobile:mobile,id:1,polls:[]}))
-                let user = JSON.parse(localStorage.getItem('user'));
-                if (user.polls.length){
+                localStorage.setItem('user',JSON.stringify(res.data.user));
+
+                if (res.data.user.voted) {
                   step.value = 3;
-                  errors.value.push('شما قبلا در نظرسنجی شرکت کرده اید. با تشکر از همراهی شما.')
-                }else {
+                } else {
                   window.location = '/poll';
                 }
               } else {

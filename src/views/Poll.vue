@@ -10,9 +10,23 @@
 <script>
 
 import Questions from "@/components/Questions.vue";
+import {onMounted, ref} from "vue";
 export default {
   name: 'Poll',
-  components:{Questions,}
+  components:{Questions,},
+  setup(){
+    const user = ref({})
+    onMounted(()=>{
+      user.value =JSON.parse(localStorage.getItem('user'));
+      if(user.value == {}){
+        window.location = '/'
+      }
+      if(user.value.voted){
+        window.location = '/'
+      }
+
+    })
+  }
 }
 </script>
 <style scoped>
