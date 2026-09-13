@@ -14,9 +14,10 @@
               </ul>
             </div>
             <div v-show="step==1">
-              <p>با شرکت در نظرسنجی مارا در ارائه خدمات بهتر و بهود کیفیت محصولات
-                یاری کنید.
-              </p>
+              <h4>با شرکت در نظرسنجی مارا در ارائه خدمات بهتر
+                و بهود کیفیت محصـــــولات یاری کنید
+              </h4>
+              <br>
               <p> برای شرکت در نظرسنجی لطفا شماره موبایلت رو وارد کن
               </p>
               <div class="row justify-content-center">
@@ -175,6 +176,9 @@ export default {
           code: code,
         })
             .then((res) => {
+              if (res.status === 422) {
+                errors.value.push = res.data.message;
+              }
               if (res.status === 200) {
                 localStorage.setItem('user',JSON.stringify(res.data.user));
 
@@ -184,10 +188,10 @@ export default {
                   window.location = '/poll';
                 }
               } else {
-                console.log(res)
+                errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
               }
             }).catch((err) => {
-          errors.value.push = err.response.data.message;
+          errors.value.push = err;
         })
 
       }
