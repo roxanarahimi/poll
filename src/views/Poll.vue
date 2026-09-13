@@ -25,10 +25,11 @@ export default {
             .then((res) => {
               user.value = res.data
               localStorage.setItem('user', JSON.stringify(res.data));
-              if (!res.data) {
+            })
+            .then(()=>{
+              if (user.value == {}) {
                 window.location = '/'
-              }
-              if (res.data.voted) {
+              }else if(user.value.voted == true) {
                 window.location = '/'
               }
             })
