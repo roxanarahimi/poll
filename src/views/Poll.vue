@@ -18,6 +18,7 @@ export default {
     const user = ref({})
     onMounted(()=>{
       user.value =JSON.parse(localStorage.getItem('user'));
+      console.log(user.value)
       if(user.value == {}){
         window.location = '/'
       }

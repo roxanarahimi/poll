@@ -1,5 +1,5 @@
 <template>
- <div class="overflow-x-hidden">
+ <div class="w-100 overflow-x-hidden">
    <router-view/>
  </div>
 </template>
