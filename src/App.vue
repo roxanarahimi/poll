@@ -1,5 +1,5 @@
 <template>
-    <div class="row flex-row-reverse align-self-lg-end">
+    <div class="row w-100 overflow-x-hidden flex-row-reverse align-self-lg-end">
 
       <div class="col-12 col-lg-6">
         <div class="text-center mt-lg-3 py-lg-3">
