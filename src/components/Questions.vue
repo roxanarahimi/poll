@@ -1,12 +1,7 @@
 <template>
-  <div class="w-100 h-100 question-bg"  >
-    <div class="row h-100 d-flex align-self-lg-end">
-      <div class="col-lg-5 "></div>
-      <div class="col-lg-7 h-100">
-        <div class=" justify-content-center h-100 d-lg-grid p-0 p-lg-0 m-0 d-lg-flex pe-lg-5 ">
-     <div class="jumbotron align-self-lg-end rounded p-4 p-lg-5 my-3 mx-auto text-light" ><!--     style="background: rgba(255,255,255,0.85)"-->
-            <h1 class="">نظرسنجی نودالیت دراگون</h1>
-            <hr>
+
+  <div class="text-center text-light p-0 p-lg-0 m-0 mb-lg-5">
+    <div class="jumbotron bg-dark text-light  rounded p-3 px-5 mx-auto " >
             <p v-if="errors[questionIndex]" class="alert alert-danger">
               {{ error }}
             </p>
@@ -57,9 +52,7 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+
 </template>
 <script>
 import {onBeforeMount, onMounted, ref} from "vue";
@@ -80,7 +73,7 @@ export default {
     const next = () => {
       if (responses.value[questionIndex.value] === undefined) {
         errors.value[questionIndex.value] = 1;
-        error.value = 'لطفا یگ گزینه را انتخاب کنید';
+        error.value = 'لطفا یگ گزینه را انتخاب کن';
       } else {
         errors.value[questionIndex.value] = 0;
         questionIndex.value++;
@@ -108,12 +101,12 @@ export default {
           }).then((response) => {
         messageOk.value = true;
         messageNotOk.value = false;
-        message.value = 'با تشکر از همراهی شما، نظر شما ثبت شد.';
+        message.value = 'با تشکر از همراهیت، نظرت ثبت شد.';
       }).catch((error) => {
         console.error('notOk', error)
         messageOk.value = false;
         messageNotOk.value = true;
-        message.value = 'نظر شما ثبت نشد، لطفا دوباره تلاش کنید.';
+        message.value = 'نظرت ثبت نشد، لطفا دوباره تلاش کن.';
       })
 
     }

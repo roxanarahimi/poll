@@ -4,11 +4,17 @@ body, html {
     direction: rtl !important;
     text-align: right !important;
     scroll-behavior: smooth;
-    background-color: transparent;
+    background-color: black;
 }
 h1{
     font-family: YekanBakhExtraBold !important;
 
+}
+.hero {
+    background: url('/img/desktop.jpg') center center no-repeat;
+    background-size: 100%;
+    border-radius: 90px;
+    box-shadow: 0 0 70px 70px black inset;
 }
 * {
     transition: all 0.5s ease !important;
@@ -50,18 +56,43 @@ body {
     background: url('/img/bg-desktop.jpg') center center no-repeat black; background-size: 100%;
 }
 
+.jumbotron{
+    width: 450px;
+}
 .jumbotron h1{
     font-size: 50px !important;
 }
 .jumbotron h4{
-    font-size: 25px !important;
+    font-size: 20px !important;
 }
 .jumbotron label{
     font-size: 20px !important;
 }
-
+.height-100{
+    height: 100%;
+}
+.logo{
+    width: 150px;
+}
+.title{
+    width: 340px;
+}
 @media(max-width: 700px) {
-
+    .mobile{
+        height: 50vh !important;
+    }
+    .logo{
+        width: 120px;
+    }
+    .title{
+        width: 280px;
+    }
+     .height-100{
+        max-height: 420px !important;
+    }
+    .jumbotron{
+        width: 350px;
+    }
     hr{
         display: none;
     }
@@ -144,4 +175,7 @@ input:focus{
 }
 .hasError{
     border:2px solid tomato;
+}
+input,.btn{
+    border-radius: 50px !important;
 }

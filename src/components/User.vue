@@ -1,78 +1,74 @@
 <template>
-  <div class="w-100 h-100 question-bg">
-    <div class="row h-100 d-flex align-self-lg-end">
-      <div class="col-lg-5 "></div>
-      <div class="col-lg-7 h-100">
-        <div class=" justify-content-center h-100 d-lg-grid p-0 p-lg-0 m-0 d-lg-flex pe-lg-5 mb-lg-5">
-          <div class="jumbotron  align-self-lg-end mb-5  rounded p-4 p-lg-5 my-3 mx-auto text-light">
-            <!--     style="background: rgba(255,255,255,0.85)"-->
-            <h1 class="mb-lg-5">نظرسنجی نودالیت دراگون</h1>
+  <div class="text-center text-light p-0 p-lg-0 m-0 mb-lg-5">
+    <div v-if="step==1" class="mx-auto w-100 px-2 px-lg-0" style="max-width: 450px;">
+      <h4>با شرکت در نظرسنجی مارا در ارائه خدمات
+        <br>
+        بهتر و بهبـــود کیفیت محصـــولات یاری کنید
+      </h4>
+      <br>
 
-            <div v-if="errors.length" class="alert alert-danger d-flex justify-content-center">
-              <ul>
-                <li v-for="error in errors">{{ error }}</li>
-              </ul>
-            </div>
-            <div v-show="step==1">
-              <h4>با شرکت در نظرسنجی مارا در ارائه خدمات بهتر
-                و بهود کیفیت محصـــــولات یاری کنید
-              </h4>
-              <br>
-              <p> برای شرکت در نظرسنجی لطفا شماره موبایلت رو وارد کن
-              </p>
-              <div class="row justify-content-center">
-                <div class="col-lg-8 mb-3">
-                  <input type="text" id="mobile" class="form-control en bg-none w-100" placeholder="091- - - - - - - -">
-                </div>
-                <div class="col-12">
-                  <button class="btn btn-info" @click.prevent="getOtp">دریافت کد تایید</button>
-                </div>
+    </div>
+    <div class="jumbotron bg-dark text-light mb-5  rounded p-4 p-lg-4 mx-auto " >
 
-              </div>
-            </div>
-            <div v-if="step==2" class="col-lg-8 mx-auto">
-              <p>لطفا کد تاییدی که در پیامک دریافت کردی رو وارد کن</p>
-              <div class="d-flex justify-content-between flex-row-reverse w-100">
-                <div class="mb-3">
-                  <input type="number" @input="autoTab($event)" id="code1" class="form-control code bg-none "
-                         minLength="1" maxLength="1" min="0" max="9">
-                </div>
-                <div class="mb-3">
-                  <input type="number" @input="autoTab($event)" id="code2" class="form-control code bg-none "
-                         minLength="1" maxLength="1" min="0" max="9">
-                </div>
-                <div class="mb-3">
-                  <input type="number" @input="autoTab($event)" id="code3" class="form-control code bg-none "
-                         minLength="1" maxLength="1" min="0" max="9">
-                </div>
-                <div class="mb-3">
-                  <input type="number" @input="autoTab($event)" id="code4" class="form-control code bg-none "
-                         minLength="1" maxLength="1" min="0" max="9">
-                </div>
-
-
-              </div>
-              <div class=" d-flex justify-content-between">
-                <div class="text-info">
-                  <p v-show="time">00:<span id="time">{{ time }}</span></p>
-                </div>
-                <small v-if="time==0" class="text-info" @click.prevent="resend">ارسال دوباره کد</small>
-                <small v-else class="text-secondary">ارسال دوباره کد</small>
-              </div>
-            </div>
-            <div v-if="step==3" >
-              <div class="alert alert-warning d-flex justify-content-center">
-                <ul>
-                  <li>شما قبلا در نظرسنجی شرکت کرده اید. با تشکر از همراهی شما.</li>
-                </ul>
-              </div>
-
-            </div>
+      <div v-if="errors.length" class="alert alert-danger d-flex justify-content-center">
+        <ul>
+          <li v-for="error in errors">{{ error }}</li>
+        </ul>
+      </div>
+      <div v-show="step==1">
+        <p> لطفا شماره موبایلت رو وارد کن
+        </p>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 mb-3">
+            <input type="text" id="mobile" class="form-control en bg-none w-100" placeholder="091- - - - - - - -">
           </div>
+          <div class="col-12">
+            <button class="btn btn-danger" @click.prevent="getOtp">دریافت کد تایید</button>
+          </div>
+
         </div>
+      </div>
+      <div v-if="step==2" class="col-lg-8 mx-auto">
+        <p>لطفا کد تاییدی که در پیامک دریافت کردی رو وارد کن</p>
+        <div class="d-flex justify-content-between flex-row-reverse w-100">
+          <div class="mb-3">
+            <input type="number" @input="autoTab($event)" id="code1" class="form-control code bg-none "
+                   minLength="1" maxLength="1" min="0" max="9">
+          </div>
+          <div class="mb-3">
+            <input type="number" @input="autoTab($event)" id="code2" class="form-control code bg-none "
+                   minLength="1" maxLength="1" min="0" max="9">
+          </div>
+          <div class="mb-3">
+            <input type="number" @input="autoTab($event)" id="code3" class="form-control code bg-none "
+                   minLength="1" maxLength="1" min="0" max="9">
+          </div>
+          <div class="mb-3">
+            <input type="number" @input="autoTab($event)" id="code4" class="form-control code bg-none "
+                   minLength="1" maxLength="1" min="0" max="9">
+          </div>
+
+
+        </div>
+        <div class=" d-flex justify-content-between">
+          <div class="text-info">
+            <p v-show="time">00:<span id="time">{{ time }}</span></p>
+          </div>
+          <small v-if="time==0" class="text-info" @click.prevent="resend">ارسال دوباره کد</small>
+          <small v-else class="text-secondary">ارسال دوباره کد</small>
+        </div>
+      </div>
+      <div v-if="step==3" >
+        <div class="alert alert-warning d-flex justify-content-center">
+          <ul>
+            <li>شما قبلا در نظرسنجی شرکت کرده اید. با تشکر از همراهی شما.</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </div>
+
 
 </template>
 
