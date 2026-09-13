@@ -11,6 +11,7 @@
 
 import Questions from "@/components/Questions.vue";
 import {onMounted, ref} from "vue";
+import App from "@/App.vue";
 export default {
   name: 'Poll',
   components:{Questions,},
@@ -18,15 +19,13 @@ export default {
     const user = ref({})
     onMounted(()=>{
       let user_ =JSON.parse(localStorage.getItem('user'));
-      if(user_){
+      if(user_.id){
         axios.get(App.setup().url+'user/'+user_.id)
             .then((res)=>{
               user.value = res.data
               localStorage.setItem('user',JSON.stringify(res.data));
             })
             .catch((error)=>console.error(error))
-
-
         console.log(user.value)
         if(!user.value){
           window.location = '/'
