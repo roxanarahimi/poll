@@ -22,15 +22,19 @@ export default {
         axios.get(App.setup().url+'user/'+user_.id)
             .then((res)=>{
               user.value = res.data
+              localStorage.setItem('user',JSON.stringify(res.data));
             })
             .catch((error)=>console.error(error))
 
-      }
-      console.log(user.value)
-      if(user.value == {}){
-        window.location = '/'
-      }
-      if(user.value.voted){
+
+        console.log(user.value)
+        if(!user.value){
+          window.location = '/'
+        }
+        if(user.value.voted){
+          window.location = '/'
+        }
+      }else{
         window.location = '/'
       }
 
