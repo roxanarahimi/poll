@@ -1,7 +1,7 @@
 <template>
 
   <div class="text-center text-light p-0 p-lg-0 m-0 mb-lg-5">
-    <div class="jumbotron bg-dark text-light  rounded p-3 px-5 mx-auto " >
+    <div class="jumbotron bg-dark text-light  rounded p-3 px-4 mx-auto " >
             <p v-if="errors[questionIndex]" class="alert alert-danger">
               {{ error }}
             </p>
