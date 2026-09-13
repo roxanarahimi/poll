@@ -18,29 +18,29 @@ export default {
   components: {Questions,},
   setup() {
     const user = ref({})
-    // onMounted(() => {
-    //   let user_ = JSON.parse(localStorage.getItem('user'));
-    //   console.log('user_',user_)
-    //   if (user_) {
-    //     axios.get(App.setup().url + 'user/' + user_.id)
-    //         .then((res) => {
-    //           user.value = res.data
-    //           localStorage.setItem('user', JSON.stringify(res.data));
-    //         })
-    //         .then(()=>{
-    //           if (!user.value) {
-    //             window.location = '/'
-    //           }else if(user.value.voted == true) {
-    //             window.location = '/'
-    //           }
-    //         })
-    //         .catch((error) => console.error(error));
-    //
-    //   } else {
-    //     window.location = '/'
-    //   }
-    //
-    // })
+    onMounted(() => {
+      let user_ = JSON.parse(localStorage.getItem('user'));
+      console.log('user_',user_)
+      if (user_) {
+        axios.get(App.setup().url + 'user/' + user_.id)
+            .then((res) => {
+              user.value = res.data
+              localStorage.setItem('user', JSON.stringify(res.data));
+            })
+            .then(()=>{
+              if (!user.value) {
+                window.location = '/'
+              }else if(user.value.voted == true) {
+                window.location = '/'
+              }
+            })
+            .catch((error) => console.error(error));
+
+      } else {
+        window.location = '/'
+      }
+
+    })
 
     return{user,}
   }
