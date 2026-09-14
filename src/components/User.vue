@@ -92,7 +92,7 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('لطفا شماره موبایلت رو وارد کن')
       }
-      if (!(mobile.startsWith('09')||mobile.startsWith('٠٩'))) {
+      if (!(mobile.startsWith('09')||mobile.startsWith('۰۹'))) {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید با 09 شروع بشه')
 
@@ -101,7 +101,7 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید 11 رقم باشه')
       }
-      if (mobile.length === 11 && (mobile.startsWith('09')||mobile.startsWith('٠٩'))) {
+      if (mobile.length === 11 && (mobile.startsWith('09')||mobile.startsWith('۰۹'))) {
         // mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
           mobile: mobile
