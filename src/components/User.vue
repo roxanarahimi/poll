@@ -92,7 +92,7 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('لطفا شماره موبایلت رو وارد کن')
       }
-      if (!mobile.startsWith('09')) {
+      if (!(mobile.startsWith('09')||mobile.startsWith('٠٩'))) {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید با 09 شروع بشه')
 
@@ -101,7 +101,7 @@ export default {
         document.querySelector('#mobile').classList.add('hasError')
         errors.value.push('شماره موبایل باید 11 رقم باشه')
       }
-      if (mobile.length === 11 && mobile.startsWith('09')) {
+      if (mobile.length === 11 && (mobile.startsWith('09')||mobile.startsWith('٠٩'))) {
         // mobile.value = document.querySelector('#mobile').value;
         axios.post(url + 'mobile/otp', {
           mobile: mobile
@@ -110,7 +110,8 @@ export default {
           counter();
           document.getElementById("code1").focus();
         }).catch((error) => {
-          errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
+          console.error(error)
+          // errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
         })
       }
 
@@ -184,7 +185,8 @@ export default {
                   window.location = '/poll';
                 }
               } else {
-                errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
+
+                // errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
               }
             }).catch((err) => {
           errors.value.push = err;

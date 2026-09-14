@@ -39,15 +39,15 @@
               </div>
             </div>
 
-            <div class="mb-5" v-if="quiz.length > 0" v-show="questionIndex === quiz?.length">
+            <div class="my-5" v-if="quiz.length > 0" v-show="questionIndex === quiz?.length">
               <p v-if="messageOk === true" class="alert alert-success">
                 {{ message }}
               </p>
               <p v-if="messageNotOk=== true" class="alert alert-danger">
                 {{ message }}
               </p>
-              <button v-if="messageOk!==true" class="btn btn-success" @click="save">
-                ارسال
+              <button v-if="messageOk!==true" class="mt-5 btn btn-success" @click="save">
+                ثبت نهایی
               </button>
             </div>
           </div>
