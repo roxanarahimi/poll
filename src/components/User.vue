@@ -108,6 +108,7 @@ export default {
         }).then((response) => {
           step.value = 2
           counter();
+          document.getElementById("code1").focus();
         }).catch((error) => {
           errors.value.push('در ارسال پیامک مشکلی پیش آمد. لطفا دوباره تلاش کن.')
         })
@@ -172,9 +173,8 @@ export default {
           code: code,
         })
             .then((res) => {
-              if (res.status === 422) {
-                errors.value.push = res.data.message;
-              }
+              console.log(res)
+
               if (res.status === 200) {
                 localStorage.setItem('user',JSON.stringify(res.data.user));
 
@@ -188,6 +188,8 @@ export default {
               }
             }).catch((err) => {
           errors.value.push = err;
+          console.error(err)
+          console.error('m',err.message)
         })
 
       }

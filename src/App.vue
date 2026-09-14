@@ -9,7 +9,7 @@
         </div>
         <router-view/>
       </div>
-      <div class="col-12 col-lg-6 px-4">
+      <div class="col-12 col-lg-6 px-2">
         <div class="hero w-100">
           <img class="opacity-0 w-100" src="/img/desktop.jpg" alt="">
         </div>
