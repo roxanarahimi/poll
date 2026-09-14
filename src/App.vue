@@ -7,7 +7,6 @@
         <h3 class="text-center text-danger p-0 m-0" style="font-family: YekanBakhExtraBold">اژدها وارد می شود!</h3>
         <img src="/img/title.jpg" class="d-block mx-auto title" alt="">
       </div>
-
       <div class=" w-100 text-center">
         <router-view/>
       </div>
