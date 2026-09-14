@@ -20,7 +20,7 @@
         </p>
         <div class="row justify-content-center">
           <div class="col-lg-8 mb-3">
-            <input type="text" id="mobile" class="form-control en bg-none w-100" placeholder="091- - - - - - - -">
+            <input type="text" id="mobile" class="form-control en bg-none w-100" placeholder="09 - - - - - - - -">
           </div>
           <div class="col-12">
             <button class="btn btn-danger" @click.prevent="getOtp">دریافت کد تایید</button>
